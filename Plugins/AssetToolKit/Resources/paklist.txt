@@ -1,7 +1,0 @@
-﻿F:/UE4Work/BuildSlatePlugin/Content/Shape_Cone.uasset
-F:/UE4Work/BuildSlatePlugin/Content/Shape_Cube.uasset
-F:/UE4Work/BuildSlatePlugin/Content/Shape_Cylinder.uasset
-F:/UE4Work/BuildSlatePlugin/Content/Shape_NarrowCapsule.uasset
-F:/UE4Work/BuildSlatePlugin/Content/Shape_Pipe.uasset
-F:/UE4Work/BuildSlatePlugin/Content/Shape_Pipe_90.uasset
-F:/UE4Work/BuildSlatePlugin/Content/Shape_Pipe_180.uasset

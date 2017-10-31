@@ -1,7 +1,6 @@
 {
-	"Changelist" : 3658906,
-	"CompatibleChangelist" : 3573198,
-	"BuildId" : "7d5229ac-d3e2-4191-ac6f-9a43d8706aee",
+	"Changelist" : 0,
+	"BuildId" : "b4dee033-f0e3-4957-a615-a9f5154260fb",
 	"Modules" : 
 	{
 		"BatchLODTool" : "UE4Editor-BatchLODTool.dll"

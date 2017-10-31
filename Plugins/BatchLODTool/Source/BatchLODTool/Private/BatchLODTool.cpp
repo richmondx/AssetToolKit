@@ -37,29 +37,11 @@ void FBatchLODToolModule::StartupModule()
 		FBatchLODToolCommands::Get().PluginAction,
 		FExecuteAction::CreateRaw(this, &FBatchLODToolModule::PluginButtonClicked),
 		FCanExecuteAction());
-
 	InstallCBHook();
-	//FLevelEditorModule& LevelEditorModule = FModuleManager::LoadModuleChecked<FLevelEditorModule>("LevelEditor");
-	//
-	//{
-	//	TSharedPtr<FExtender> MenuExtender = MakeShareable(new FExtender());
-	//	MenuExtender->AddMenuExtension("WindowLayout", EExtensionHook::After, PluginCommands, FMenuExtensionDelegate::CreateRaw(this, &FBatchLODToolModule::AddMenuExtension));
-
-	//	LevelEditorModule.GetMenuExtensibilityManager()->AddExtender(MenuExtender);
-	//}
-
-	//{
-	//	TSharedPtr<FExtender> ToolbarExtender = MakeShareable(new FExtender);
-	//	ToolbarExtender->AddToolBarExtension("Settings", EExtensionHook::After, PluginCommands, FToolBarExtensionDelegate::CreateRaw(this, &FBatchLODToolModule::AddToolbarExtension));
-
-	//	LevelEditorModule.GetToolBarExtensibilityManager()->AddExtender(ToolbarExtender);
-	//}
 }
 
 void FBatchLODToolModule::ShutdownModule()
 {
-	// This function may be called during shutdown to clean up your module.  For modules that support dynamic reloading,
-	// we call this function before unloading the module.
 	if (UObjectInitialized())
 	{
 		UnRegisterSettings();
@@ -71,7 +53,6 @@ void FBatchLODToolModule::ShutdownModule()
 void FBatchLODToolModule::InstallCBHook()
 {
 	FContentBrowserModule& AssetContextModule = FModuleManager::LoadModuleChecked<FContentBrowserModule>("ContentBrowser");
-	//AssetFactorySingleton = NewObject<UBatchLODFactory>();
 	//处理资源
 	FContentBrowserMenuExtender_SelectedAssets CBExtenderDelegate;
 	CBExtenderDelegate = FContentBrowserMenuExtender_SelectedAssets::CreateRaw(this, &FBatchLODToolModule::OnExtendCBAssetSelectionMenu);
@@ -130,7 +111,6 @@ void FBatchLODToolModule::AddAnalysisExtension(FMenuBuilder& Builder)
 
 void FBatchLODToolModule::PluginButtonClicked()
 {
-	// Put your "OnButtonClicked" stuff here
 	FContentBrowserModule& AssetContextModule = FModuleManager::LoadModuleChecked<FContentBrowserModule>("ContentBrowser");
 	AssetContextModule.Get().GetSelectedAssets(AssetData);
 	FAssetToolsModule& AssetToolsModule = FModuleManager::LoadModuleChecked<FAssetToolsModule>("AssetTools");
@@ -142,19 +122,13 @@ void FBatchLODToolModule::PluginButtonClicked()
 	{
 		TempArray.Add(Cast<UStaticMesh>(AssetData[i].ToStringReference().TryLoad()));
 	}
-
 	ApplyChangeLODSetting(TempArray);
-
-//	UStaticMesh* StaticMesh = Cast<UStaticMesh>(assetdata.ToStringReference().TryLoad());
-
-	//AssetFactorySingleton = NewObject<UBatchLODFactory>();
-	//AssetToolsModule.Get().CreateAssetWithDialog(UObject::StaticClass(), AssetFactorySingleton, NAME_None);
 }
 
 void FBatchLODToolModule::AddMenuExtension(FMenuBuilder& Builder)
 {
 	Builder.AddMenuEntry(FBatchLODToolCommands::Get().PluginAction);
-}
+}   
 
 bool FBatchLODToolModule::HandleLODSettingSaved()
 {
@@ -179,8 +153,6 @@ void FBatchLODToolModule::ApplyChangeLODSetting(TArray<UStaticMesh*> MeshArray)
 	{
 		StaticMesh = MeshArray[i];
 		StaticMesh->Modify();
-
-	//	StaticMesh->SourceModels.RemoveAll();
 
 		if (StaticMesh->SourceModels.Num() > LODCount)
 		{

@@ -6,9 +6,9 @@
 /NAME:"UE4Editor-BatchLODTool.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"F:\EpicGame\UE_4.17\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.h.obj"
+"F:\UnrealEngine-4.17\Engine\Intermediate\Build\Win64\UE4Editor\Development\UnrealEd\SharedPCH.UnrealEd.h.obj"
 "F:\UE4Work\Project417\Plugins\BatchLODTool\Intermediate\Build\Win64\UE4Editor\Development\BatchLODTool\Module.BatchLODTool.cpp.obj"
 "F:\UE4Work\Project417\Plugins\BatchLODTool\Intermediate\Build\Win64\UE4Editor\Development\BatchLODTool\Module.BatchLODTool.gen.cpp.obj"
-"F:\EpicGame\UE_4.17\Engine\Intermediate\Build\Win64\UE4Editor\Development\BatchLODTool\PCLaunch.rc.res"
-"F:\EpicGame\UE_4.17\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
+"F:\UnrealEngine-4.17\Engine\Intermediate\Build\Win64\UE4Editor\Development\PCLaunch.rc.res"
+"F:\UnrealEngine-4.17\Engine\Intermediate\Build\Win64\UE4Editor\Development\ModuleVersionResource.rc.inl.res"
 /OUT:"F:\UE4Work\Project417\Plugins\BatchLODTool\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BatchLODTool.lib"

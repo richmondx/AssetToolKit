@@ -21,11 +21,11 @@ struct FLODSetting
 
 	/** Higher values reduce texture stretching. */
 	UPROPERTY(EditAnywhere, Category = ReductionSettings)
-		TEnumAsByte<EMeshFeatureImportance::Type> TextureImportance;
+		TEnumAsByte<EMeshFeatureImportance::Type> TextureImportance = EMeshFeatureImportance::Type::Normal;
 
 	/** Higher values try to preserve normals better. */
 	UPROPERTY(EditAnywhere, Category = ReductionSettings)
-		TEnumAsByte<EMeshFeatureImportance::Type> ShadingImportance;
+		TEnumAsByte<EMeshFeatureImportance::Type> ShadingImportance = EMeshFeatureImportance::Type::Normal;
 };
 
 
